@@ -4,9 +4,14 @@
   "main": "index.js",
   "repository": "git@github.com:tombo1818/danger-github-actions-sample.git",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "supertest": "^6.0.1"
   }
 }
