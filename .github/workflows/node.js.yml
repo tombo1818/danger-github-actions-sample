@@ -20,6 +20,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup Ruby
+      uses: actions/setup-ruby@v1
+    - name: Install Danger
+      run: |
+        gem insatll bundler
+        bundle install
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -28,3 +34,7 @@ jobs:
       run: yarn
     - name: Test
       run: yarn run test
+    - name: Danger
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: danger
