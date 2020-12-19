@@ -24,7 +24,7 @@ jobs:
       uses: actions/setup-ruby@v1
     - name: Install Danger
       run: |
-        gem insatll bundler
+        gem install bundler
         bundle install
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
