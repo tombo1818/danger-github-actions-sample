@@ -1,4 +1,13 @@
 import { schedule } from "danger";
-import yarn from "danger-plugin-yarn";
+const checkYarnLock = require("danger-yarn-lock");
 
-schedule(yarn());
+schedule(function (resolved) {
+  checkYarnLock()
+    .then(function (message) {
+      warn(message);
+      resolved();
+    })
+    .catch(function (err) {
+      throw(err);
+    })
+});
