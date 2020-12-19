@@ -1,4 +1,4 @@
-import { schedule } from "danger";
+const { schedule, danger } = require("danger");
 const checkYarnLock = require("danger-yarn-lock");
 
 schedule(function (resolved) {
