@@ -1,3 +1,4 @@
-const { yarn } = require('danger-plugin-yarn')
+import { schedule } from "danger";
+import yarn from "danger-plugin-yarn";
 
-yarn()
+schedule(yarn());
